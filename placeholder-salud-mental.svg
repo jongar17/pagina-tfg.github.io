@@ -1,0 +1,49 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" width="800" height="500">
+  <defs>
+    <pattern id="patron" patternUnits="userSpaceOnUse" width="30" height="30">
+      <circle cx="15" cy="15" r="1" fill="#1a2d5a" opacity="0.6"/>
+    </pattern>
+    <linearGradient id="fondo" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1b3e"/>
+      <stop offset="100%" style="stop-color:#1e3a6e"/>
+    </linearGradient>
+    <linearGradient id="ondas" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2b4580;stop-opacity:0"/>
+      <stop offset="50%" style="stop-color:#2b4580;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#2b4580;stop-opacity:0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Fondo -->
+  <rect width="800" height="500" fill="url(#fondo)"/>
+  <rect width="800" height="500" fill="url(#patron)"/>
+
+  <!-- Ondas EEG / línea de pulso -->
+  <polyline
+    points="0,280 60,280 80,240 100,320 120,200 140,360 160,250 200,280 260,280 280,230 300,330 320,210 340,350 360,260 420,280 480,280 500,250 520,310 540,240 560,320 580,270 640,280 700,280 800,280"
+    fill="none" stroke="#4a7fd4" stroke-width="2.5" opacity="0.5"/>
+  <polyline
+    points="0,300 40,300 60,260 80,340 100,220 120,380 140,270 180,300 240,300 260,250 280,350 300,230 320,370 340,280 400,300 460,300 480,270 500,330 520,260 540,340 560,290 620,300 680,300 800,300"
+    fill="none" stroke="#2b4580" stroke-width="1.5" opacity="0.35"/>
+
+  <!-- Círculo central sutil -->
+  <circle cx="400" cy="250" r="160" fill="none" stroke="#2b4580" stroke-width="1" opacity="0.3"/>
+  <circle cx="400" cy="250" r="100" fill="none" stroke="#2b4580" stroke-width="1" opacity="0.2"/>
+
+  <!-- Número decorativo -->
+  <text x="400" y="290" font-family="Georgia, serif" font-size="160" font-weight="900" fill="#1e3a6e" opacity="0.35" text-anchor="middle" dominant-baseline="middle">31%</text>
+
+  <!-- Etiqueta de sección -->
+  <rect x="40" y="40" width="140" height="28" fill="#2b4580"/>
+  <text x="52" y="58" font-family="monospace" font-size="11" fill="#f5f2ec" letter-spacing="2">SALUD REAL</text>
+
+  <!-- Logotipo BETA pequeño -->
+  <text x="760" y="58" font-family="Georgia, serif" font-size="22" font-weight="900" fill="#f5f2ec" opacity="0.4" text-anchor="end">BETA.</text>
+
+  <!-- Titular -->
+  <text x="400" y="155" font-family="Georgia, serif" font-size="26" font-weight="700" fill="#f5f2ec" text-anchor="middle" opacity="0.9">Salud mental juvenil</text>
+  <text x="400" y="188" font-family="Georgia, serif" font-size="17" fill="#a0b8e0" text-anchor="middle" opacity="0.8">1 de cada 3 jóvenes vascos pide ayuda</text>
+
+  <!-- Línea decorativa inferior -->
+  <rect x="0" y="485" width="800" height="15" fill="#e84b2f" opacity="0.7"/>
+</svg>
