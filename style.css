@@ -444,6 +444,15 @@ img {
   word-break: break-word;
 }
 
+/* Enlaces dentro del artículo: mismo estilo que .fuentes-articulo li a */
+.contenedor-articulo a {
+  color: var(--acento);
+}
+
+.contenedor-articulo a:hover {
+  text-decoration: underline;
+}
+
 /* --- Cabecera del artículo --- */
 .cabecera-articulo {
   margin-bottom: 2.5rem;
@@ -480,6 +489,27 @@ img {
   display: flex;
   gap: 1.5rem;
   flex-wrap: wrap;
+}
+
+/* --- Imagen principal del artículo --- */
+.imagen-articulo {
+  margin: 0 0 2.5rem;
+}
+
+.imagen-articulo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  max-height: 480px;
+}
+
+.imagen-articulo figcaption {
+  font-family: var(--fuente-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  color: var(--gris-medio);
+  padding-top: 0.5rem;
 }
 
 /* --- Cuerpo del artículo --- */
