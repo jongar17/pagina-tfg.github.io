@@ -512,12 +512,48 @@ img {
   padding-top: 0.5rem;
 }
 
+/* --- Infografía embebida en el cuerpo del artículo --- */
+.infografia-articulo {
+  margin: 2.5rem auto;
+  max-width: 480px;
+}
+
+.infografia-articulo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+.infografia-articulo figcaption {
+  font-family: var(--fuente-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  color: var(--gris-medio);
+  padding-top: 0.5rem;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .infografia-articulo {
+    max-width: 100%;
+  }
+}
+
 /* --- Cuerpo del artículo --- */
 .cuerpo-articulo p {
   font-size: 1.05rem;
   line-height: 1.8;
   margin-bottom: 1.5rem;
   font-weight: 300;
+}
+
+.cuerpo-articulo a {
+  color: var(--acento);
+}
+
+.cuerpo-articulo a:hover {
+  text-decoration: underline;
 }
 
 .cuerpo-articulo p strong {
@@ -1303,4 +1339,296 @@ img {
 
 [data-tema="oscuro"] .pie-pagina {
   background-color: #0a0a09;
+}
+
+/* ============================================================
+   ESTILOS ESPECÍFICOS DEL REPORTAJE MULTIMEDIA (reportaje.html)
+   Responsive completo incluido aquí
+============================================================ */
+
+/* --- Hero: cabecera de impacto --- */
+.reportaje-hero {
+  background-color: var(--negro);
+  color: var(--blanco);
+  padding: 4rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.reportaje-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(-45deg,
+      transparent,
+      transparent 30px,
+      rgba(232, 75, 47, 0.04) 30px,
+      rgba(232, 75, 47, 0.04) 31px);
+  pointer-events: none;
+}
+
+.reportaje-hero .interior {
+  position: relative;
+  max-width: min(820px, 100%);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.reportaje-hero .label-reportaje {
+  font-family: var(--fuente-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--acento);
+  margin-bottom: 1.5rem;
+}
+
+.reportaje-hero h1 {
+  font-family: var(--fuente-titulo);
+  font-size: clamp(1.6rem, 5vw, 3.8rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--blanco);
+  margin-bottom: 1.5rem;
+}
+
+.reportaje-hero .entradilla-hero {
+  font-size: clamp(0.95rem, 2vw, 1.15rem);
+  font-weight: 300;
+  line-height: 1.65;
+  color: var(--gris-claro);
+  max-width: min(680px, 100%);
+  margin: 0 auto 2rem;
+}
+
+.reportaje-hero .meta-hero {
+  font-family: var(--fuente-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gris-medio);
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* --- Imagen principal del reportaje --- */
+.reportaje-imagen-principal {
+  width: 100%;
+  max-height: 520px;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.reportaje-imagen-principal img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* --- Barra de 3 datos clave --- */
+.datos-clave-reportaje {
+  background-color: var(--acento);
+  color: var(--blanco);
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  overflow: hidden;
+}
+
+.dato-clave {
+  padding: 1.5rem 1.5rem;
+  background-color: var(--acento);
+  text-align: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.dato-clave:last-child {
+  border-right: none;
+}
+
+.dato-clave .cifra {
+  font-family: var(--fuente-titulo);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 900;
+  line-height: 1;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.dato-clave .label-cifra {
+  font-family: var(--fuente-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.9;
+  line-height: 1.4;
+}
+
+/* --- Contenedor del cuerpo del reportaje --- */
+.contenedor-reportaje {
+  max-width: min(820px, 100%);
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  box-sizing: border-box;
+}
+
+/* --- Separadores temáticos entre bloques --- */
+.separador-bloque {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 3rem 0 2rem;
+}
+
+.separador-bloque span {
+  font-family: var(--fuente-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gris-medio);
+  white-space: nowrap;
+}
+
+.separador-bloque::before,
+.separador-bloque::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background-color: var(--gris-claro);
+}
+
+/* --- Noticias relacionadas al pie --- */
+.relacionadas-pie {
+  background-color: var(--gris-claro);
+  padding: 3rem 2rem;
+  margin-top: 2rem;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.relacionadas-pie .interior {
+  max-width: var(--max-ancho);
+  margin: 0 auto;
+}
+
+/* --- Nota de fuentes --- */
+.nota-fuentes {
+  margin-top: 1.5rem;
+  font-size: 0.82rem;
+  color: var(--gris-medio);
+  line-height: 1.6;
+}
+
+/* ============================================================
+   RESPONSIVE DEL REPORTAJE
+============================================================ */
+
+/* Tablet (≤900px) */
+@media (max-width: 900px) {
+  .reportaje-hero {
+    padding: 3rem 1.5rem;
+  }
+
+  .datos-clave-reportaje {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .dato-clave {
+    padding: 1.2rem 1rem;
+  }
+
+  .dato-clave .cifra {
+    font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+  }
+
+  .contenedor-reportaje {
+    padding: 2rem 1.5rem;
+  }
+
+  .relacionadas-pie {
+    padding: 2rem 1.5rem;
+  }
+}
+
+/* Móvil grande (≤700px) */
+@media (max-width: 700px) {
+  .reportaje-imagen-principal {
+    max-height: 260px;
+  }
+
+  .reportaje-hero {
+    padding: 2.5rem 1rem;
+  }
+
+  .reportaje-hero .interior {
+    padding: 0;
+  }
+
+  /* Datos en columna única en móvil */
+  .datos-clave-reportaje {
+    grid-template-columns: 1fr;
+  }
+
+  .dato-clave {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 1.2rem 1.5rem;
+  }
+
+  .dato-clave:last-child {
+    border-bottom: none;
+  }
+
+  .dato-clave .cifra {
+    font-size: 2.2rem;
+  }
+
+  .contenedor-reportaje {
+    padding: 1.5rem 1rem;
+  }
+
+  .separador-bloque {
+    margin: 2rem 0 1.5rem;
+  }
+
+  .relacionadas-pie {
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* Móvil (≤500px) */
+@media (max-width: 500px) {
+  .reportaje-hero {
+    padding: 2rem 0.75rem;
+  }
+
+  .reportaje-hero .meta-hero {
+    gap: 0.75rem;
+    font-size: 0.62rem;
+  }
+
+  .contenedor-reportaje {
+    padding: 1.2rem 0.75rem;
+  }
+
+  .dato-clave .cifra {
+    font-size: 2rem;
+  }
+
+  .separador-bloque span {
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+  }
+
+  .relacionadas-pie {
+    padding: 1.2rem 0.75rem;
+  }
 }
