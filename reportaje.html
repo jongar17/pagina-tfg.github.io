@@ -6,291 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>IA en las aulas vascas — Reportaje multimedia — BETA.</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    /* ============================================================
-       ESTILOS ESPECÍFICOS DEL REPORTAJE MULTIMEDIA
-       Responsive completo incluido aquí para no tocar style.css
-    ============================================================ */
-
-    /* --- Hero: cabecera de impacto --- */
-    .reportaje-hero {
-      background-color: var(--negro);
-      color: var(--blanco);
-      padding: 4rem 2rem;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      width: 100%;
-      box-sizing: border-box;
-    }
-
-    .reportaje-hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: repeating-linear-gradient(-45deg,
-          transparent,
-          transparent 30px,
-          rgba(232, 75, 47, 0.04) 30px,
-          rgba(232, 75, 47, 0.04) 31px);
-      pointer-events: none;
-    }
-
-    .reportaje-hero .interior {
-      position: relative;
-      max-width: min(820px, 100%);
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
-
-    .reportaje-hero .label-reportaje {
-      font-family: var(--fuente-mono);
-      font-size: 0.7rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--acento);
-      margin-bottom: 1.5rem;
-    }
-
-    .reportaje-hero h1 {
-      font-family: var(--fuente-titulo);
-      font-size: clamp(1.6rem, 5vw, 3.8rem);
-      font-weight: 700;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      color: var(--blanco);
-      margin-bottom: 1.5rem;
-    }
-
-    .reportaje-hero .entradilla-hero {
-      font-size: clamp(0.95rem, 2vw, 1.15rem);
-      font-weight: 300;
-      line-height: 1.65;
-      color: var(--gris-claro);
-      max-width: min(680px, 100%);
-      margin: 0 auto 2rem;
-    }
-
-    .reportaje-hero .meta-hero {
-      font-family: var(--fuente-mono);
-      font-size: 0.68rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--gris-medio);
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    /* --- Imagen principal del reportaje --- */
-    .reportaje-imagen-principal {
-      width: 100%;
-      max-height: 520px;
-      overflow: hidden;
-      line-height: 0;
-    }
-
-    .reportaje-imagen-principal img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    /* --- Barra de 3 datos clave --- */
-    .datos-clave-reportaje {
-      background-color: var(--acento);
-      color: var(--blanco);
-      padding: 0;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      width: 100%;
-      overflow: hidden;
-    }
-
-    .dato-clave {
-      padding: 1.5rem 1.5rem;
-      background-color: var(--acento);
-      text-align: center;
-      border-right: 1px solid rgba(255, 255, 255, 0.25);
-    }
-
-    .dato-clave:last-child {
-      border-right: none;
-    }
-
-    .dato-clave .cifra {
-      font-family: var(--fuente-titulo);
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      font-weight: 900;
-      line-height: 1;
-      display: block;
-      margin-bottom: 0.4rem;
-    }
-
-    .dato-clave .label-cifra {
-      font-family: var(--fuente-mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      opacity: 0.9;
-      line-height: 1.4;
-    }
-
-    /* --- Contenedor del cuerpo del reportaje --- */
-    .contenedor-reportaje {
-      max-width: min(820px, 100%);
-      margin: 0 auto;
-      padding: 3rem 2rem;
-      box-sizing: border-box;
-    }
-
-    /* --- Separadores temáticos entre bloques --- */
-    .separador-bloque {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin: 3rem 0 2rem;
-    }
-
-    .separador-bloque span {
-      font-family: var(--fuente-mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gris-medio);
-      white-space: nowrap;
-    }
-
-    .separador-bloque::before,
-    .separador-bloque::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background-color: var(--gris-claro);
-    }
-
-    /* --- Noticias relacionadas al pie --- */
-    .relacionadas-pie {
-      background-color: var(--gris-claro);
-      padding: 3rem 2rem;
-      margin-top: 2rem;
-      box-sizing: border-box;
-      width: 100%;
-    }
-
-    .relacionadas-pie .interior {
-      max-width: var(--max-ancho);
-      margin: 0 auto;
-    }
-
-    /* ============================================================
-       RESPONSIVE DEL REPORTAJE
-    ============================================================ */
-
-    /* Tablet (≤900px) */
-    @media (max-width: 900px) {
-      .reportaje-hero {
-        padding: 3rem 1.5rem;
-      }
-
-      .datos-clave-reportaje {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .dato-clave {
-        padding: 1.2rem 1rem;
-      }
-
-      .dato-clave .cifra {
-        font-size: clamp(1.5rem, 3.5vw, 2.2rem);
-      }
-
-      .contenedor-reportaje {
-        padding: 2rem 1.5rem;
-      }
-
-      .relacionadas-pie {
-        padding: 2rem 1.5rem;
-      }
-    }
-
-    /* Móvil grande (≤700px) */
-    @media (max-width: 700px) {
-      .reportaje-imagen-principal {
-        max-height: 260px;
-      }
-
-      .reportaje-hero {
-        padding: 2.5rem 1rem;
-      }
-
-      .reportaje-hero .interior {
-        padding: 0;
-      }
-
-      /* Datos en columna única en móvil */
-      .datos-clave-reportaje {
-        grid-template-columns: 1fr;
-      }
-
-      .dato-clave {
-        border-right: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-        padding: 1.2rem 1.5rem;
-      }
-
-      .dato-clave:last-child {
-        border-bottom: none;
-      }
-
-      .dato-clave .cifra {
-        font-size: 2.2rem;
-      }
-
-      .contenedor-reportaje {
-        padding: 1.5rem 1rem;
-      }
-
-      .separador-bloque {
-        margin: 2rem 0 1.5rem;
-      }
-
-      .relacionadas-pie {
-        padding: 1.5rem 1rem;
-      }
-    }
-
-    /* Móvil (≤500px) */
-    @media (max-width: 500px) {
-      .reportaje-hero {
-        padding: 2rem 0.75rem;
-      }
-
-      .reportaje-hero .meta-hero {
-        gap: 0.75rem;
-        font-size: 0.62rem;
-      }
-
-      .contenedor-reportaje {
-        padding: 1.2rem 0.75rem;
-      }
-
-      .dato-clave .cifra {
-        font-size: 2rem;
-      }
-
-      .separador-bloque span {
-        font-size: 0.6rem;
-        letter-spacing: 0.12em;
-      }
-
-      .relacionadas-pie {
-        padding: 1.2rem 0.75rem;
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -371,12 +86,15 @@
     <div class="cuerpo-articulo animar animar-3">
       <p>
         Euskadi cuenta con más de 380.000 alumnos dentro de un sistema educativo conformado por alrededor de 1.200
-        centros cuya realidad se ha visto impactada en los últimos años por la transformación digital y las perspectivas
+        centros cuya realidad se ha visto impactada en los últimos años por <a
+          href="https://www.noticiasdealava.eus/sociedad/2026/04/02/aulas-vascas-reto-digitalizacion-inteligencia-10897379.html"
+          target="_blank">la transformación digital</a> y las perspectivas
         que abre la inteligencia artificial.
       </p>
       <p>
-        La respuesta institucional no tardó: el Departamento de Educación presentó junto a Elhuyar la Guía para el Uso
-        de las Inteligencias Artificiales en el ámbito educativo, contrastada con 18 profesores de centros públicos
+        La respuesta institucional no tardó: el Departamento de Educación presentó junto a Elhuyar <a
+          href="https://www.euskadi.eus/gobierno-vasco/-/noticia/2025/el-departamento-educacion-recoge-guia-orientaciones-uso-inteligencia-artificial-proceso-aprendizaje/"
+          target="_blank">la Guía para el Uso de las Inteligencias Artificiales en el ámbito educativo</a>, contrastada con 18 profesores de centros públicos
         vascos y expertos en TIC. Sus dos principios rectores son poner en el centro el desarrollo del alumno y no
         sustituir las relaciones presenciales. Sobre el papel, impecable. En la práctica, la realidad de cada aula es
         otra historia.
@@ -415,6 +133,12 @@
         veces genera una sensación de aprendizaje superficial. Lo saben. Lo admiten. Y la siguen usando.
       </p>
     </div>
+
+    <!-- Infografía resumen del estudio -->
+    <figure class="infografia-articulo animar animar-2">
+      <img src="img/infografia-ia-educacion.svg" alt="Infografía: la IA en las aulas vascas — uso, para qué la usan los estudiantes y brecha de percepción entre alumnado y profesorado" loading="lazy" />
+      <figcaption>Infografía · Datos del estudio de J. J. Calleja Pérez (CIFP Elorrieta Erreka Mari, 2025-2026)</figcaption>
+    </figure>
 
     <!-- BLOQUE 3: La brecha de percepciones -->
     <div class="separador-bloque animar"><span>La brecha entre lo que ven los estudiantes y lo que ven los docentes</span></div>
@@ -471,7 +195,8 @@
         silencioso no sea ninguno de esos. Es que la IA no está llegando igual a todos.
       </p>
       <p>
-        Un centro con profesorado formado y protocolo claro genera estudiantes que usan la herramienta de forma crítica.
+        Un centro con <a href="https://www.ehu.eus/es/web/adimen-artifiziala/hezkuntza-ikuspegiak-eta-orientazioak"
+          target="_blank">profesorado formado</a> y protocolo claro genera estudiantes que usan la herramienta de forma crítica.
         Un centro donde cada docente improvisa genera estudiantes que copian y pegan sin entender. La guía vasca existe,
         pero nadie está midiendo si se está aplicando, ni cómo, ni dónde.
       </p>
@@ -493,25 +218,9 @@
       </p>
     </div>
 
-    <!-- FUENTES -->
+    <!-- DISCLAIMER DE FUENTES -->
     <div class="fuentes-articulo animar animar-3">
-      <h3>Fuentes</h3>
-      <ul>
-        <li>Calleja Pérez, J. J. (2025-2026). <em>Adimen Artifizial Sortzailearen Erabilera Informatika eta
-            Komunikabideko Lanbide Heziketan: CIFP Elorrieta-Mari LHIIren kasu-azterketa</em>. Trabajo de Fin de
-          Máster, Irakasleen Prestakuntzarako Unibertsitate Masterra, UEU / UPV-EHU. Datos cedidos por el autor para
-          este reportaje.</li>
-        <li>Gobierno Vasco / Elhuyar (2025). Guía para el uso de la IA en educación. Disponible en: <a
-            href="https://www.euskadi.eus/gobierno-vasco/-/noticia/2025/el-departamento-educacion-recoge-guia-orientaciones-uso-inteligencia-artificial-proceso-aprendizaje/"
-            target="_blank">euskadi.eus</a></li>
-        <li>Noticias de Álava (abril 2026). Las aulas vascas ante el reto de la IA. Disponible en: <a
-            href="https://www.noticiasdealava.eus/sociedad/2026/04/02/aulas-vascas-reto-digitalizacion-inteligencia-10897379.html"
-            target="_blank">noticiasdealava.eus</a></li>
-        <li>Universidad del País Vasco (EHU - 2024). Guía sobre IA en educación. Disponible en: <a
-            href="https://www.ehu.eus/es/web/adimen-artifiziala/hezkuntza-ikuspegiak-eta-orientazioak"
-            target="_blank">ehu.eus</a></li>
-      </ul>
-      <p style="margin-top: 1.5rem; font-size: 0.82rem; color: var(--gris-medio); line-height: 1.6;">
+      <p class="nota-fuentes">
         <strong>Nota:</strong> Los datos del estudio empírico han sido proporcionados por Jesús Javier Calleja Pérez,
         quien ha autorizado expresamente su uso en este reportaje. El estudio fue realizado en el CIFP Elorrieta
         Erreka Mari (Bilbao) durante el curso 2025-2026.
@@ -527,6 +236,9 @@
       <p class="titulo-seccion-portada">También en BETA.</p>
       <div class="rejilla-noticias">
         <article class="tarjeta-noticia">
+          <a href="noticia-vivienda.html" class="tarjeta-imagen">
+            <img src="img/placeholder-vivienda.jpg" alt="Emanciparse en Euskadi con 300 euros" />
+          </a>
           <span class="etiqueta-seccion economia">Economía nuestra</span>
           <a href="noticia-vivienda.html">
             <h3 class="titular">Emanciparse en Euskadi con 300 euros: la ayuda que no llega a fin de mes</h3>
@@ -534,6 +246,9 @@
           <a href="noticia-vivienda.html" class="leer-mas">Leer</a>
         </article>
         <article class="tarjeta-noticia">
+          <a href="noticia-salud-mental.html" class="tarjeta-imagen">
+            <img src="img/placeholder-salud-mental.jpg" alt="Salud mental juvenil en Euskadi" />
+          </a>
           <span class="etiqueta-seccion salud">Salud real</span>
           <a href="noticia-salud-mental.html">
             <h3 class="titular">El suicidio es la primera causa de muerte entre los jóvenes vascos</h3>
@@ -541,6 +256,9 @@
           <a href="noticia-salud-mental.html" class="leer-mas">Leer</a>
         </article>
         <article class="tarjeta-noticia">
+          <a href="noticia-bbk.html" class="tarjeta-imagen">
+            <img src="img/placeholder-bbk.jpg" alt="BBK Live 2026" />
+          </a>
           <span class="etiqueta-seccion cultura">Nuestra cultura</span>
           <a href="noticia-bbk.html">
             <h3 class="titular">El BBK Live cumple 20 años con el cartel más ambicioso de su historia</h3>
