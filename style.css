@@ -515,7 +515,7 @@ img {
 /* --- Infografía embebida en el cuerpo del artículo --- */
 .infografia-articulo {
   margin: 2.5rem auto;
-  max-width: 480px;
+  max-width: 680px;
 }
 
 .infografia-articulo img {
@@ -532,12 +532,6 @@ img {
   color: var(--gris-medio);
   padding-top: 0.5rem;
   text-align: center;
-}
-
-@media (max-width: 700px) {
-  .infografia-articulo {
-    max-width: 100%;
-  }
 }
 
 /* --- Cuerpo del artículo --- */
