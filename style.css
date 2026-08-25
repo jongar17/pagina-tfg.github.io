@@ -1626,3 +1626,110 @@ img {
     padding: 1.2rem 0.75rem;
   }
 }
+
+/* ============================================================
+   PÁGINA DE ENTREVISTA (entrevista.html)
+   ============================================================ */
+
+/* --- Ficha rápida de la persona entrevistada --- */
+.ficha-entrevistada {
+  background-color: var(--negro);
+  color: var(--blanco);
+  padding: 1.75rem 2.5rem;
+  margin: 0 0 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 3rem;
+}
+
+.dato-ficha {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.dato-ficha .etiqueta-ficha {
+  font-family: var(--fuente-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--acento);
+}
+
+.dato-ficha .valor-ficha {
+  font-size: 0.92rem;
+  font-weight: 400;
+  color: var(--gris-claro);
+}
+
+[data-tema="oscuro"] .ficha-entrevistada {
+  background-color: #1a1917;
+}
+
+/* --- Pregunta destacada --- */
+.pregunta-entrevista {
+  background-color: var(--gris-claro);
+  border-left: 4px solid var(--acento);
+  padding: 1.5rem 2rem;
+  margin: 3rem 0 1.5rem;
+}
+
+.pregunta-entrevista .num-pregunta {
+  display: block;
+  font-family: var(--fuente-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--acento);
+  margin-bottom: 0.5rem;
+}
+
+.pregunta-entrevista p {
+  font-family: var(--fuente-titulo);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--negro);
+}
+
+/* --- Vídeo de la respuesta --- */
+.video-pregunta {
+  margin: 0 0 1.75rem;
+  background-color: #0a0a0a;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.video-pregunta video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* --- Respuesta transcrita --- */
+.respuesta-entrevista .etiqueta-respuesta {
+  display: block;
+  font-family: var(--fuente-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gris-medio);
+  margin-bottom: 0.6rem;
+}
+
+@media (max-width: 700px) {
+  .ficha-entrevistada {
+    padding: 1.25rem 1.5rem;
+    gap: 1rem 2rem;
+  }
+
+  .pregunta-entrevista {
+    padding: 1.2rem 1.4rem;
+    margin: 2.2rem 0 1.2rem;
+  }
+
+  .pregunta-entrevista p {
+    font-size: 1.1rem;
+  }
+}
