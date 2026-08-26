@@ -106,8 +106,8 @@
 
     <div class="cuerpo-articulo animar animar-2">
       <p>
-        Una investigación realizada durante el curso 2025-2026 en el CIFP Elorrieta Erreka Mari de Bilbao,
-        concretamente en el área de Informática y Comunicaciones, arroja un retrato muy claro: la IA generativa no es
+        Una investigación realizada durante el curso 2025-2026 en el un centro de formación profesional de Bilbao que ha preferido no ser mencionado en este reportaje,
+        en el departamento de Informática y Comunicaciones, arroja un retrato muy claro: la IA generativa no es
         algo que se esté debatiendo si introducir en las aulas, ya está dentro. El estudio, elaborado por Jesús Javier
         Calleja Pérez para su Trabajo de Fin de Máster y cuyos datos han sido cedidos para este reportaje, recoge las
         respuestas de 38 alumnos y 11 docentes de tres especialidades: Desarrollo de Aplicaciones Multiplataforma,
@@ -126,7 +126,7 @@
     <div class="cuerpo-articulo animar animar-3">
       <p>
         El 76,3% del alumnado encuestado usa la IA varias veces a la semana o más, y un 26,3% lo hace a diario. El
-        100% la emplea en tareas relacionadas con sus estudios. Los usos más frecuentes son recibir explicaciones
+        100% la emplea en tareafs relacionadas con sus estudios. Los usos más frecuentes son recibir explicaciones
         teóricas (92%) y entender distintos tipos de ejercicios (84%), lo que apunta a que los estudiantes la usan
         principalmente como tutor permanente, no como atajo para entregar trabajos. Pero hay una lectura más
         incómoda: el 52,6% del alumnado admite que la IA reduce su esfuerzo cognitivo, y el 47,7% reconoce que a
@@ -147,7 +147,7 @@
       <p>
         El mismo estudio revela una fractura de percepciones llamativa. Mientras los estudiantes valoran la IA
         principalmente como herramienta de comprensión (con una puntuación media de 4,18 sobre 5), el profesorado es
-        mucho más escéptico sobre sus beneficios, con puntuaciones que no superan el 2,82 en los mismos ítems. Sin
+        mucho más escéptico sobre sus beneficios, con puntuaciones que no superan el 2,82 en los mismos temas. Sin
         embargo, en los riesgos cognitivos hay casi unanimidad entre los docentes: el aprendizaje superficial y la
         reducción del esfuerzo mental obtienen un 4,73 sobre 5 en preocupación. El 63,1% del alumnado nunca ha
         recibido ninguna orientación sobre cómo usar estas herramientas. Están aprendiendo solos, sin brújula.
@@ -228,6 +228,28 @@
 
   </main>
   <!-- fin contenedor-reportaje -->
+
+  <!-- ============================================================
+       SECCIÓN DE COMENTARIOS — Opinión de los lectores
+  ============================================================ -->
+  <section class="seccion-comentarios">
+    <div class="comentarios-interior">
+      <h2 class="titulo-comentarios">Opinión de los lectores</h2>
+      <p class="subtitulo-comentarios">¿Qué te ha parecido este reportaje? Cuéntanoslo.</p>
+
+      <form class="form-comentarios">
+        <div class="fila-campos">
+          <input type="text" name="nombre" class="campo-comentario" placeholder="Tu nombre" required maxlength="60" />
+          <input type="email" name="email" class="campo-comentario" placeholder="Tu email (no se publica)" maxlength="100" />
+        </div>
+        <textarea name="comentario" class="campo-comentario campo-textarea" placeholder="Escribe tu opinión..." required maxlength="600" rows="4"></textarea>
+        <button type="submit" class="boton-comentario">Publicar comentario</button>
+        <p class="mensaje-comentario" aria-live="polite"></p>
+      </form>
+
+      <div class="lista-comentarios"></div>
+    </div>
+  </section>
 
   <!-- Noticias relacionadas al pie del reportaje -->
   <div class="relacionadas-pie">

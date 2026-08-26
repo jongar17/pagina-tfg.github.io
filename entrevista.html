@@ -308,9 +308,13 @@
       <span class="num-pregunta">Pregunta 10</span>
       <p>¿Qué le dirías a una chica de 16 o 17 años que está pensando en estudiar ingeniería?</p>
     </div>
-    <figure class="video-pregunta animar">
-      <video controls preload="metadata" src="entrevista/Pregunta14.mp4"></video>
-    </figure>
+      <figure class="video-pregunta animar">
+  <iframe
+    src="https://www.youtube.com/embed/ikQFue9XgGs"
+    title="Video"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>
+</figure>
     <div class="respuesta-entrevista cuerpo-articulo animar">
       <p>
         Le diría que piense bien lo que realmente le gusta. No elijas una ingeniería solo porque se te dan bien
@@ -354,6 +358,28 @@
 
   </main>
   <!-- fin contenedor-reportaje -->
+
+  <!-- ============================================================
+       SECCIÓN DE COMENTARIOS — Opinión de los lectores
+  ============================================================ -->
+  <section class="seccion-comentarios">
+    <div class="comentarios-interior">
+      <h2 class="titulo-comentarios">Opinión de los lectores</h2>
+      <p class="subtitulo-comentarios">¿Qué te ha parecido esta entrevista? Cuéntanoslo.</p>
+
+      <form class="form-comentarios">
+        <div class="fila-campos">
+          <input type="text" name="nombre" class="campo-comentario" placeholder="Tu nombre" required maxlength="60" />
+          <input type="email" name="email" class="campo-comentario" placeholder="Tu email (no se publica)" maxlength="100" />
+        </div>
+        <textarea name="comentario" class="campo-comentario campo-textarea" placeholder="Escribe tu opinión..." required maxlength="600" rows="4"></textarea>
+        <button type="submit" class="boton-comentario">Publicar comentario</button>
+        <p class="mensaje-comentario" aria-live="polite"></p>
+      </form>
+
+      <div class="lista-comentarios"></div>
+    </div>
+  </section>
 
   <!-- Noticias relacionadas al pie -->
   <div class="relacionadas-pie">

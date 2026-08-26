@@ -1428,6 +1428,8 @@ img {
   height: 100%;
   object-fit: cover;
   display: block;
+  transform: translateY(-210px);
+ 
 }
 
 /* --- Barra de 3 datos clave --- */
@@ -1737,5 +1739,191 @@ img {
 
   .pregunta-entrevista p {
     font-size: 1.1rem;
+  }
+}
+
+/* ============================================================
+   SECCIÓN DE COMENTARIOS — Opinión de los lectores
+   Formulario + listado, presente al final de cada noticia
+   ============================================================ */
+
+.seccion-comentarios {
+  background-color: var(--gris-claro);
+  padding: 3rem 2rem;
+  margin-top: 2rem;
+}
+
+.comentarios-interior {
+  max-width: var(--col-principal);
+  margin: 0 auto;
+}
+
+.titulo-comentarios {
+  font-family: var(--fuente-titulo);
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.subtitulo-comentarios {
+  font-size: 0.95rem;
+  color: var(--gris-oscuro);
+  margin-bottom: 1.75rem;
+}
+
+.form-comentarios {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin-bottom: 2.5rem;
+}
+
+.fila-campos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+}
+
+.campo-comentario {
+  font-family: var(--fuente-cuerpo);
+  font-size: 0.95rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--gris-medio);
+  background-color: var(--fondo);
+  color: var(--negro);
+  width: 100%;
+  transition: border-color 0.2s;
+}
+
+.campo-comentario:focus {
+  outline: none;
+  border-color: var(--acento);
+}
+
+.campo-textarea {
+  resize: vertical;
+  min-height: 110px;
+  font-family: var(--fuente-cuerpo);
+}
+
+.boton-comentario {
+  align-self: flex-start;
+  font-family: var(--fuente-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--blanco);
+  background-color: var(--negro);
+  border: none;
+  padding: 0.9rem 1.8rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.boton-comentario:hover {
+  background-color: var(--acento);
+}
+
+.mensaje-comentario {
+  font-family: var(--fuente-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
+  color: #1a5c3a;
+  min-height: 1.2em;
+}
+
+.mensaje-comentario.mensaje-error {
+  color: var(--acento);
+}
+
+.lista-comentarios {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.comentarios-vacio {
+  font-size: 0.9rem;
+  color: var(--gris-medio);
+  font-style: italic;
+}
+
+.comentario {
+  display: flex;
+  gap: 1rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--gris-medio);
+}
+
+.comentario:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.comentario-avatar {
+  flex-shrink: 0;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  background-color: var(--negro);
+  color: var(--blanco);
+  font-family: var(--fuente-titulo);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comentario-cabecera {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.35rem;
+}
+
+.comentario-nombre {
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.comentario-fecha {
+  font-family: var(--fuente-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--gris-medio);
+}
+
+.comentario-texto {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--gris-oscuro);
+}
+
+[data-tema="oscuro"] .seccion-comentarios {
+  background-color: #1a1917;
+}
+
+[data-tema="oscuro"] .campo-comentario {
+  background-color: #111110;
+  border-color: var(--gris-oscuro);
+  color: var(--gris-claro);
+}
+
+@media (max-width: 700px) {
+  .seccion-comentarios {
+    padding: 2rem 1rem;
+  }
+
+  .fila-campos {
+    grid-template-columns: 1fr;
+  }
+
+  .boton-comentario {
+    align-self: stretch;
+    text-align: center;
   }
 }

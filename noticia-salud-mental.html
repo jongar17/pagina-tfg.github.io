@@ -46,7 +46,7 @@
 
         <!-- Cabecera -->
         <header class="cabecera-articulo animar animar-2">
-          <span class="etiqueta-seccion salud">Salud real</span>
+          <span class="etiqueta-seccion salud">Salud Mental</span>
           <h1 class="titular-articulo">
             El suicidio es la primera causa de muerte entre los jóvenes vascos y
             uno de cada tres ha pedido ayuda psicológica
@@ -65,7 +65,7 @@
         <!-- Imagen principal -->
         <figure class="imagen-articulo animar animar-2">
           <img src="img/placeholder-salud-mental.jpg" alt="Salud mental juvenil en Euskadi" />
-          <figcaption>Foto: Banco de imágenes X</figcaption>
+          <figcaption>Foto: Nikko Macaspac a través de Unplash</figcaption>
         </figure>
 
         <!-- ============================================================
@@ -181,7 +181,7 @@
                 hecha con ellas
               </p>
             </a>
-            <span class="seccion-rel">Colectivo</span>
+            <span class="seccion-rel">Salud Mental</span>
           </div>
           <div class="noticia-relacionada">
             <a href="reportaje.html">
@@ -204,6 +204,28 @@
         </div>
       </aside>
     </div>
+
+    <!-- ============================================================
+       SECCIÓN DE COMENTARIOS — Opinión de los lectores
+  ============================================================ -->
+    <section class="seccion-comentarios">
+      <div class="comentarios-interior">
+        <h2 class="titulo-comentarios">Opinión de los lectores</h2>
+        <p class="subtitulo-comentarios">¿Qué te ha parecido esta noticia? Cuéntanoslo.</p>
+
+        <form class="form-comentarios">
+          <div class="fila-campos">
+            <input type="text" name="nombre" class="campo-comentario" placeholder="Tu nombre" required maxlength="60" />
+            <input type="email" name="email" class="campo-comentario" placeholder="Tu email (no se publica)" maxlength="100" />
+          </div>
+          <textarea name="comentario" class="campo-comentario campo-textarea" placeholder="Escribe tu opinión..." required maxlength="600" rows="4"></textarea>
+          <button type="submit" class="boton-comentario">Publicar comentario</button>
+          <p class="mensaje-comentario" aria-live="polite"></p>
+        </form>
+
+        <div class="lista-comentarios"></div>
+      </div>
+    </section>
 
     <footer class="pie-pagina">
       <div class="pie-interior">
@@ -235,5 +257,6 @@
         <span>Trabajo de Fin de Grado · UPV/EHU</span>
       </div>
     </footer>
+    <script src="main.js"></script>
   </body>
 </html>

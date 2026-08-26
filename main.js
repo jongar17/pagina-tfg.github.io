@@ -330,6 +330,111 @@ function actualizarFecha() {
 
 
 /* ============================================================
+   8. COMENTARIOS DE LECTORES
+   Formulario de opinión al final de cada noticia.
+   Se guardan en localStorage, con una clave distinta por página.
+============================================================ */
+
+function iniciarComentarios() {
+  const form = document.querySelector('.form-comentarios');
+  const lista = document.querySelector('.lista-comentarios');
+  if (!form || !lista) return;
+
+  const clave = 'beta-comentarios-' + location.pathname;
+  const mensaje = form.querySelector('.mensaje-comentario');
+
+  function obtenerComentarios() {
+    try {
+      return JSON.parse(localStorage.getItem(clave)) || [];
+    } catch (e) {
+      return [];
+    }
+  }
+
+  function formatearFecha(iso) {
+    const fecha = new Date(iso);
+    return fecha.toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' }) +
+      ' · ' + fecha.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' });
+  }
+
+  function crearComentarioEl(c) {
+    const div = document.createElement('div');
+    div.className = 'comentario';
+
+    const avatar = document.createElement('span');
+    avatar.className = 'comentario-avatar';
+    avatar.textContent = c.nombre.trim().charAt(0).toUpperCase();
+
+    const cuerpo = document.createElement('div');
+    cuerpo.className = 'comentario-cuerpo';
+
+    const cabecera = document.createElement('div');
+    cabecera.className = 'comentario-cabecera';
+
+    const nombre = document.createElement('span');
+    nombre.className = 'comentario-nombre';
+    nombre.textContent = c.nombre;
+
+    const fecha = document.createElement('span');
+    fecha.className = 'comentario-fecha';
+    fecha.textContent = formatearFecha(c.fecha);
+
+    cabecera.appendChild(nombre);
+    cabecera.appendChild(fecha);
+
+    const texto = document.createElement('p');
+    texto.className = 'comentario-texto';
+    texto.textContent = c.texto;
+
+    cuerpo.appendChild(cabecera);
+    cuerpo.appendChild(texto);
+    div.appendChild(avatar);
+    div.appendChild(cuerpo);
+    return div;
+  }
+
+  function renderizarComentarios() {
+    const comentarios = obtenerComentarios();
+    lista.innerHTML = '';
+
+    if (!comentarios.length) {
+      const vacio = document.createElement('p');
+      vacio.className = 'comentarios-vacio';
+      vacio.textContent = 'Todavía no hay comentarios. Sé la primera persona en opinar.';
+      lista.appendChild(vacio);
+      return;
+    }
+
+    comentarios.slice().reverse().forEach(c => lista.appendChild(crearComentarioEl(c)));
+  }
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const nombre = form.nombre.value.trim();
+    const texto = form.comentario.value.trim();
+
+    if (!nombre || !texto) {
+      mensaje.textContent = 'Rellena tu nombre y tu opinión antes de enviar.';
+      mensaje.classList.add('mensaje-error');
+      return;
+    }
+
+    const comentarios = obtenerComentarios();
+    comentarios.push({ nombre, texto, fecha: new Date().toISOString() });
+    localStorage.setItem(clave, JSON.stringify(comentarios));
+
+    form.reset();
+    mensaje.classList.remove('mensaje-error');
+    mensaje.textContent = 'Gracias, tu comentario se ha publicado.';
+    renderizarComentarios();
+  });
+
+  renderizarComentarios();
+}
+
+
+/* ============================================================
    INICIALIZACIÓN — Arrancar todo cuando el DOM esté listo
 ============================================================ */
 
@@ -341,4 +446,5 @@ document.addEventListener('DOMContentLoaded', () => {
   iniciarMenuMovil();
   calcularTiempoLectura();
   iniciarCabeceraSticky();
+  iniciarComentarios();
 });

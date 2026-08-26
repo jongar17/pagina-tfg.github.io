@@ -44,7 +44,7 @@
 
       <!-- Cabecera -->
       <header class="cabecera-articulo animar animar-2">
-        <span class="etiqueta-seccion colectivo">Colectivo</span>
+        <span class="etiqueta-seccion colectivo">Salud Mental</span>
         <h1 class="titular-articulo">
           Osakidetza estrena una guía de atención integral para personas trans hecha con ellas, no para ellas
         </h1>
@@ -61,7 +61,7 @@
       <!-- Imagen principal -->
       <figure class="imagen-articulo animar animar-2">
         <img src="img/placeholder-trans.jpg" alt="Osakidetza y personas trans" />
-        <figcaption>Foto: Banco de imágenes X</figcaption>
+        <figcaption>Foto: Zarateman a traves de Wikimedia</figcaption>
       </figure>
 
       <!-- ============================================================
@@ -139,6 +139,28 @@
 
   </div>
 
+  <!-- ============================================================
+       SECCIÓN DE COMENTARIOS — Opinión de los lectores
+  ============================================================ -->
+  <section class="seccion-comentarios">
+    <div class="comentarios-interior">
+      <h2 class="titulo-comentarios">Opinión de los lectores</h2>
+      <p class="subtitulo-comentarios">¿Qué te ha parecido esta noticia? Cuéntanoslo.</p>
+
+      <form class="form-comentarios">
+        <div class="fila-campos">
+          <input type="text" name="nombre" class="campo-comentario" placeholder="Tu nombre" required maxlength="60" />
+          <input type="email" name="email" class="campo-comentario" placeholder="Tu email (no se publica)" maxlength="100" />
+        </div>
+        <textarea name="comentario" class="campo-comentario campo-textarea" placeholder="Escribe tu opinión..." required maxlength="600" rows="4"></textarea>
+        <button type="submit" class="boton-comentario">Publicar comentario</button>
+        <p class="mensaje-comentario" aria-live="polite"></p>
+      </form>
+
+      <div class="lista-comentarios"></div>
+    </div>
+  </section>
+
   <footer class="pie-pagina">
     <div class="pie-interior">
       <div>
@@ -168,5 +190,6 @@
     </div>
   </footer>
 
+  <script src="main.js"></script>
 </body>
 </html>
