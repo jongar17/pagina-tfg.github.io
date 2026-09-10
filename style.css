@@ -1715,6 +1715,19 @@ img {
   border: 0;
 }
 
+/* --- Frase gancho, entre el vídeo y la transcripción --- */
+.gancho-entrevista {
+  font-family: var(--fuente-titulo);
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1.45;
+  color: var(--acento);
+  margin: 0 0 1.5rem;
+  padding-left: 1.1rem;
+  border-left: 3px solid var(--acento-suave);
+}
+
 /* --- Respuesta transcrita --- */
 .respuesta-entrevista .etiqueta-respuesta {
   display: block;
@@ -1739,6 +1752,11 @@ img {
 
   .pregunta-entrevista p {
     font-size: 1.1rem;
+  }
+
+  .gancho-entrevista {
+    font-size: 1.05rem;
+    padding-left: 0.9rem;
   }
 }
 
